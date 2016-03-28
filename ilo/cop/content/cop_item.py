@@ -23,6 +23,7 @@ from plone.formwidget.contenttree import ObjPathSourceBinder
 from plone.multilingualbehavior.directives import languageindependent
 from collective import dexteritytextindexer
 from plone.autoform.directives import write_permission, read_permission
+from plone.app.z3cform.wysiwyg import WysiwygFieldWidget
 
 from ilo.cop import MessageFactory as _
 
@@ -33,6 +34,9 @@ class ICOPItem(form.Schema, IImageScaleTraversable):
     """
     COP Item
     """
+    form.widget(blog_body=WysiwygFieldWidget)
+    blog_body = schema.Text(title=u"Body")
+
     write_permission(multifile='cmf.ReviewPortalContent')
     read_permission(multifile='cmf.ReviewPortalContent')
     form.widget(multifile=MultiFileFieldWidget)
