@@ -34,6 +34,7 @@ setup(name='ilo.cop',
           'plone.app.multilingual',
           'plone.multilingualbehavior',
           'plone.app.versioningbehavior',
+          'collective.disqus',
           # -*- Extra requirements: -*-
       ],
       extras_require={
