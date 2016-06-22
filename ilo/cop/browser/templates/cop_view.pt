@@ -15,6 +15,27 @@
     if needed.
 </tal:comment>
 
+
+<metal:javascript_head fill-slot="javascript_head_slot">
+    <script type="text/javascript">
+    $(document).ready(function(){
+        var current_URL = $("span#current").html();
+        var data = $("span#data").html();
+        var fdata = $("span#fdata").html();
+        $("#previous").click(function(){
+            data = parseInt(data) -10;
+          window.location = current_URL + '?data=' + data ;
+        });
+
+        $("#next").click(function(){
+            data = parseInt(data) +10;
+          window.location = current_URL + '?data=' + data ;
+        });
+      });
+</script>
+</metal:javascript_head>
+
+
 <metal:main fill-slot="content-core">
   <metal:content-core define-macro="content-core">
 
@@ -26,6 +47,35 @@
         </div>
     </tal:block>
 
+     <form method='post'>
+      <span style="display: none" tal:content="python: view.searchedValue('data')" name='data' id='data'></span>
+    </form>
+
+    <element tal:define="brains view/contents; data python: int(view.searchedValue('data'))" >
+      <table class="listing">
+        <thead>
+          <th>Title</th>
+          <th>Description</th>
+        </thead>
+      <tbody>
+
+      <tr tal:repeat="brain python: brains[data:data+10]" >
+        <tal:element tal:define="obj brain/getObject">
+          <td><a tal:attributes="href python: brain.getURL()+ '/view'" tal:content="brain/Title"></a></td>
+          <td tal:content="brain/Description"></td>
+
+        </tal:element>
+      </tr>
+      <tr tal:condition="python: not brains">
+        <td colspan="6"><center>No Data</center></td>
+      </tr>
+    </tbody>
+  </table>
+  <button id="previous" tal:condition="python: data">previous</button>
+  <button id="next" tal:condition="python: len(brains[data:data+11]) > 10">next</button>
+</element>
+<span  style="display: none" id="current" tal:content="python: '/'.join(context.getPhysicalPath())"></span>
+
     <fieldset tal:repeat="group view/groups"
               tal:attributes="id python:''.join((group.prefix, 'groups.', group.__name__)).replace('.', '-')">
         <legend tal:content="group/label" />
@@ -35,17 +85,13 @@
             <div tal:content="structure widget/render" />
         </div>
     </fieldset>
-
-    <fieldset id="folder-listing">
-        <legend>Contents</legend>
-        <tal:block define="listing_macro context/folder_listing/macros/listing">
-            <metal:use_macro use-macro="listing_macro" />
-        </tal:block>
-    </fieldset>
-
   </metal:content-core>
 </metal:main>
 
 </body>
 </html>
+
+
+
+
 
