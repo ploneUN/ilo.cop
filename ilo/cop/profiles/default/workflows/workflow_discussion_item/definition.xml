@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<dc-workflow workflow_id="discussion_item" title="Discussion Item Workflow" description="discussion item workflow" state_variable="review_state" initial_state="private" manager_bypass="False">
+<dc-workflow workflow_id="workflow_discussion_item" title="Discussion Item Workflow" description="discussion item workflow" state_variable="review_state" initial_state="private" manager_bypass="False">
  <permission>Access contents information</permission>
  <permission>Add portal content</permission>
  <permission>Change portal events</permission>
