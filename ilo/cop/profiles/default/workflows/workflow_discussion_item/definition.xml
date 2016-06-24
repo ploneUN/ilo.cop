@@ -73,7 +73,7 @@
  </state>
  <state state_id="shared_intranet" title="Shared: Intranet">
   <description>item at this state is accessible by registered users</description>
-  <exit-transition transition_id="retract"/>
+  <exit-transition transition_id="shared_external"/>
   <permission-map name="Access contents information" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
@@ -135,7 +135,7 @@
  </state>
 <state state_id="shared_external" title="Shared: External">
   <description>item at this state is accessible by registered users</description>
-  <exit-transition transition_id="share_external"/>
+  <exit-transition transition_id="retract"/>
   <permission-map name="Access contents information" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
@@ -205,7 +205,7 @@
    <guard-role>Manager</guard-role>
   </guard>
  </transition>
- <transition transition_id="share_intranet" title="Share" new_state="shared_intranet" trigger="USER" before_script="" after_script="">
+ <transition transition_id="share_intranet" title="Share Intranet" new_state="shared_intranet" trigger="USER" before_script="" after_script="">
   <description>Share item with other registered users</description>
   <action url="%(content_url)s/content_status_modify?workflow_action=share_intranet" category="workflow" icon="">Share: Intranet</action>
   <guard>
@@ -214,7 +214,7 @@
    <guard-role>Manager</guard-role>
   </guard>
  </transition>
- <transition transition_id="share_external" title="Share" new_state="shared_external" trigger="USER" before_script="" after_script="">
+ <transition transition_id="share_external" title="Share External" new_state="shared_external" trigger="USER" before_script="" after_script="">
   <description>Share item with other registered users</description>
   <action url="%(content_url)s/content_status_modify?workflow_action=share_external" category="workflow" icon="">Share: Intranet</action>
   <guard>
