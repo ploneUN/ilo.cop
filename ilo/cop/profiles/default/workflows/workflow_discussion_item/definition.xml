@@ -73,7 +73,7 @@
  </state>
  <state state_id="shared_intranet" title="Shared: Intranet">
   <description>item at this state is accessible by registered users</description>
-  <exit-transition transition_id="shared_external"/>
+  <exit-transition transition_id="share_external"/>
   <permission-map name="Access contents information" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
@@ -216,7 +216,7 @@
  </transition>
  <transition transition_id="share_external" title="Share External" new_state="shared_external" trigger="USER" before_script="" after_script="">
   <description>Share item with other registered users</description>
-  <action url="%(content_url)s/content_status_modify?workflow_action=share_external" category="workflow" icon="">Share: Intranet</action>
+  <action url="%(content_url)s/content_status_modify?workflow_action=share_external" category="workflow" icon="">Share: External</action>
   <guard>
    <guard-role>Owner</guard-role>
    <guard-role>Site Administrator</guard-role>
