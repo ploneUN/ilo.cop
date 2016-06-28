@@ -1,6 +1,10 @@
 Changelog
 =========
-1.0dev1 - may 26, 2015
+1.0dev2 - june 28, 2016
+---------
+-fixed disqus issue and created views and permissions
+
+1.0dev1 - may 26, 2016
 ---------
 -initial dev release
 
