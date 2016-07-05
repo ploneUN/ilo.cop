@@ -73,7 +73,7 @@
  </state>
  <state state_id="shared_intranet" title="Shared: Intranet">
   <description>item at this state is accessible by registered users</description>
-  <exit-transition transition_id="to_share_in_public"/>
+  <exit-transition transition_id="pending_share_in_public"/>
   <permission-map name="Access contents information" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
@@ -276,9 +276,9 @@
    <guard-role>Manager</guard-role>
   </guard>
  </transition>
- <transition transition_id="to_share_in_public" title="To Share In Public" new_state="pending_share_public" trigger="USER" before_script="" after_script="">
+ <transition transition_id="pending_share_in_public" title="To Share In Public" new_state="pending_share_public" trigger="USER" before_script="" after_script="">
   <description>Share item with other registered users</description>
-  <action url="%(content_url)s/content_status_modify?workflow_action=pending_share_public" category="workflow" icon="">Request Share to Public</action>
+  <action url="%(content_url)s/content_status_modify?workflow_action=pending_share_in_public" category="workflow" icon="">Request Share to Public</action>
   <guard>
    <guard-role>Owner</guard-role>
    <guard-role>Site Administrator</guard-role>
