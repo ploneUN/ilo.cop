@@ -201,6 +201,7 @@
   <action url="%(content_url)s/content_status_modify?workflow_action=retract" category="workflow" icon="">Retract</action>
   <guard>
    <guard-role>Site Administrator</guard-role>
+   <guard-role>Manager</guard-role>
   </guard>
  </transition>
  <transition transition_id="share_intranet" title="Share Intranet" new_state="shared_intranet" trigger="USER" before_script="" after_script="">
@@ -217,6 +218,7 @@
   <action url="%(content_url)s/content_status_modify?workflow_action=share_public" category="workflow" icon="">Share: Public</action>
   <guard>
    <guard-role>Site Administrator</guard-role>
+   <guard-role>Manager</guard-role>
   </guard>
  </transition>
  <worklist worklist_id="reviewer_queue" title="">
