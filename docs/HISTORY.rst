@@ -1,5 +1,9 @@
 Changelog
 =========
+1.0dev3 - july 5, 2016
+---------
+-fixed workflow
+
 1.0dev2 - june 28, 2016
 ---------
 -fixed disqus issue and created views and permissions
