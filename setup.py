@@ -34,7 +34,7 @@ setup(name='ilo.cop',
           'plone.app.multilingual',
           'plone.multilingualbehavior',
           'plone.app.versioningbehavior',
-          'collective.disqus',
+#          'collective.disqus',
           'ilo.qa',
           'plone.formwidget.multifile',
           # -*- Extra requirements: -*-
