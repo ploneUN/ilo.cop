@@ -1,5 +1,9 @@
 Changelog
 =========
+1.0 - sept 9, 2016
+-----
+-first initial release for production testing
+
 1.0dev3 - july 5, 2016
 ---------
 -fixed workflow
