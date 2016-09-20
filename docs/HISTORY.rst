@@ -1,5 +1,10 @@
 Changelog
 =========
+
+1.1 - sept 20,2016
+----
+-workflow changes and removed disqus
+
 1.0 - sept 9, 2016
 -----
 -first initial release for production testing
