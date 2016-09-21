@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.1v3'
+version = '1.1v4'
 
 setup(name='ilo.cop',
       version=version,

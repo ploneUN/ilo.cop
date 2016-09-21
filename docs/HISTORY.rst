@@ -1,5 +1,8 @@
 Changelog
 =========
+1.1v4 - sept 21 
+-changed title to discussions
+
 1.1v3 - sept 21
 -added authenticated and contributor on closed
 
