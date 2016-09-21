@@ -1,5 +1,8 @@
 Changelog
 =========
+1.1v3 - sept 21
+-added authenticated and contributor on closed
+
 1.1v2 - sept 21
 -reply to item workflow
 
