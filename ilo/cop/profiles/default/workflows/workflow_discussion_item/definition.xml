@@ -10,6 +10,7 @@
  <permission>Copy or Move</permission>
  <permission>Modify view template</permission>
  <permission>Delete objects</permission>
+ <permission>Reply to item</permission>
  <state state_id="private" title="Private">
   <description>Can only be seen and edited by the owner.</description>
   <exit-transition transition_id="share_intranet"/>
@@ -70,6 +71,11 @@
    <permission-role>Reviewer</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
+  <permission-map name="Reply to item" acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
  </state>
  <state state_id="shared_intranet" title="Shared: Intranet">
   <description>item at this state is accessible by registered users</description>
@@ -124,6 +130,15 @@
    <permission-role>Site Administrator</permission-role>
   </permission-map>
   <permission-map name="View" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Member</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>Reviewer</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Reply to item" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Member</permission-role>
@@ -194,6 +209,10 @@
    <permission-role>Reviewer</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
+  <permission-map name="Reply to item" acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
  </state>
 
 <state state_id="shared_public" title="Shared: Public">
@@ -259,6 +278,15 @@
    <permission-role>Reviewer</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
+  <permission-map name="Reply to item" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Member</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>Reviewer</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
  </state>
  <state state_id="closed" title="Closed">
   <description>Can only be seen and edited by the owner.</description>
@@ -306,6 +334,9 @@
    <permission-role>Owner</permission-role>
    <permission-role>Reader</permission-role>
    <permission-role>Reviewer</permission-role>
+   <permission-role>Site Administrator</permission-role>
+  </permission-map>
+  <permission-map name="Reply to item" acquired="False">
    <permission-role>Site Administrator</permission-role>
   </permission-map>
  </state>
