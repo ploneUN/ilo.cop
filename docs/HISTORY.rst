@@ -1,5 +1,8 @@
 Changelog
 =========
+1.1v5 - nov 17
+-changed workflow and addable items on cop added folder
+
 1.1v4 - sept 21 
 -changed title to discussions
 
