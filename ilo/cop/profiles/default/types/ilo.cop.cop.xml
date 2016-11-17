@@ -13,6 +13,7 @@
   <property name="filter_content_types">True</property>  
   <property name="allowed_content_types" purge="False">
     <element value="ilo.cop.copitem" />
+    <element value="Folder" />
   </property>
   <property name="allow_discussion">False</property>
 
