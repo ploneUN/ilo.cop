@@ -79,7 +79,7 @@
  </state>
  <state state_id="shared_intranet" title="Shared: Intranet">
   <description>item at this state is accessible by registered users</description>
-  <exit-transition transition_id="pending_share_in_public"/>
+  <!-- <exit-transition transition_id="pending_share_in_public"/> -->
   <exit-transition transition_id="close"/>
   <permission-map name="Access contents information" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -149,7 +149,7 @@
    <permission-role>Site Administrator</permission-role>
   </permission-map>
  </state>
- <state state_id="pending_share_public" title="Pending to Share in Public">
+ <!-- <state state_id="pending_share_public" title="Pending to Share in Public">
   <description>item at this state is accessible by registered users</description>
   <exit-transition transition_id="share_public"/>
   <permission-map name="Access contents information" acquired="False">
@@ -292,7 +292,7 @@
    <permission-role>Reviewer</permission-role>
    <permission-role>Site Administrator</permission-role>
   </permission-map>
- </state>
+ </state> -->
  <state state_id="closed" title="Closed">
   <description>Can only be seen and edited by the owner.</description>
   <exit-transition transition_id="retract"/>
@@ -373,7 +373,7 @@
    <guard-role>Manager</guard-role>
   </guard>
  </transition>
- <transition transition_id="pending_share_in_public" title="To Share In Public" new_state="pending_share_public" trigger="USER" before_script="" after_script="">
+ <!-- <transition transition_id="pending_share_in_public" title="To Share In Public" new_state="pending_share_public" trigger="USER" before_script="" after_script="">
   <description>Share item with other registered users</description>
   <action url="%(content_url)s/content_status_modify?workflow_action=pending_share_in_public" category="workflow" icon="">Request Share to Public</action>
   <guard>
@@ -381,15 +381,15 @@
    <guard-role>Site Administrator</guard-role>
    <guard-role>Manager</guard-role>
   </guard>
- </transition>
- <transition transition_id="share_public" title="Share Public" new_state="shared_public" trigger="USER" before_script="" after_script="">
+ </transition> -->
+ <!-- <transition transition_id="share_public" title="Share Public" new_state="shared_public" trigger="USER" before_script="" after_script="">
   <description>Share item with other registered users</description>
   <action url="%(content_url)s/content_status_modify?workflow_action=share_public" category="workflow" icon="">Share: Public</action>
   <guard>
    <guard-role>Site Administrator</guard-role>
    <guard-role>Manager</guard-role>
   </guard>
- </transition>
+ </transition> -->
  <worklist worklist_id="reviewer_queue" title="">
   <description>Reviewer tasks</description>
   <action url="%(portal_url)s/search?review_state=pending" category="global" icon="">Pending (%(count)d)</action>
