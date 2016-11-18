@@ -1,5 +1,8 @@
 Changelog
 =========
+1.1v6 - nov 18
+-removed public state added file field brief on discussion item
+
 1.1v5 - nov 17
 -changed workflow and addable items on cop added folder
 
