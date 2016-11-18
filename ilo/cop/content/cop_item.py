@@ -46,13 +46,10 @@ class ICOPItem(form.Schema, IImageScaleTraversable):
             value_type=NamedFile(),
         )
 
-    write_permission(multifile='cmf.ReviewPortalContent')
-    read_permission(multifile='cmf.ReviewPortalContent')
-    form.widget(multifile=MultiFileFieldWidget)
-    brieffile = schema.List(
+    discussion_brief = NamedBlobFile(
             title=_(u"Discussion Brief"),
+            description=_(u"Please attach a file"),
             required=False,
-            value_type=NamedFile(),
         )
 
     pass
