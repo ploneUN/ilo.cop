@@ -46,6 +46,15 @@ class ICOPItem(form.Schema, IImageScaleTraversable):
             value_type=NamedFile(),
         )
 
+    write_permission(multifile='cmf.ReviewPortalContent')
+    read_permission(multifile='cmf.ReviewPortalContent')
+    form.widget(multifile=MultiFileFieldWidget)
+    brieffile = schema.List(
+            title=_(u"Discussion Brief"),
+            required=False,
+            value_type=NamedFile(),
+        )
+
     pass
 
 alsoProvides(ICOPItem, IFormFieldProvider)
