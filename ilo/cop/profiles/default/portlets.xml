@@ -2,5 +2,10 @@
 <portlets>
 
     <!-- -*- extra stuff goes here -*- -->
+    <portlet
+        addview="discussion_brief_attachment.portlet"
+        title="Discussion Brief Attachment Portlet"
+        description=""
+    />
 
 </portlets>
