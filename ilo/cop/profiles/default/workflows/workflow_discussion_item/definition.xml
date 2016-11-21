@@ -421,7 +421,7 @@
    <guard-role>Manager</guard-role>
   </guard>
  </transition>
- <transition transition_id="upcoming" title="Upcoming Discussion" new_state="open" trigger="USER" before_script="" after_script="">
+ <transition transition_id="upcoming" title="Upcoming Discussion" new_state="upcoming" trigger="USER" before_script="" after_script="">
   <description>Share item with other registered users</description>
   <action url="%(content_url)s/content_status_modify?workflow_action=upcoming" category="workflow" icon="">Upcoming Discussions</action>
   <guard>
