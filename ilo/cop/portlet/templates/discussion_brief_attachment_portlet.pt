@@ -2,9 +2,11 @@
     <span class="portletHeader" tal:content="view/data/portlet_header_title"></span><br/>
     <div tal:define="contents view/contents" tal:condition="contents">
         <tal:entry tal:repeat="content contents">
-            <p tal:define="url content/getURL; fname python: content._unrestrictedGetObject().discussion_brief.filename">
-                <a tal:attributes="href string: ${url}/view/++widget++form.widgets.discussion_brief/@@download/${fname}" tal:content="fname"></a>
-            </p>
+            <tal:if tal:condition="python: content._unrestrictedGetObject().discussion_brief">
+                <p  tal:define="url content/getURL; fname python: content._unrestrictedGetObject().discussion_brief.filename">
+                    <a tal:attributes="href string: ${url}/view/++widget++form.widgets.discussion_brief/@@download/${fname}" tal:content="fname"></a>
+                </p>
+            </tal:if>
         </tal:entry>
     </div>
     
