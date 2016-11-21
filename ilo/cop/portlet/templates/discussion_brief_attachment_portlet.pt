@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="portlet" tal:define="ptype context/portal_type" tal:condition="python: ptype=='ilo.cop.cop'">
     <span class="portletHeader" tal:content="view/data/portlet_header_title"></span><br/>
     <div tal:define="contents view/contents" tal:condition="contents">
@@ -8,6 +9,6 @@
                 </p>
             </tal:if>
         </tal:entry>
-    </div>
+    </dd>
     
-</div>
+</dl>

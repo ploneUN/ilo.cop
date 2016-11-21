@@ -1,5 +1,8 @@
 Changelog
 =========
+1.1v7 - nov 21
+-added portleets for brief
+
 1.1v6 - nov 18
 -removed public state added file field brief on discussion item
 
