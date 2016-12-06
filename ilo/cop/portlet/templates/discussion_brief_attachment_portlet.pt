@@ -4,7 +4,7 @@
         <tal:entry tal:repeat="content contents">
             <tal:if tal:condition="python: content._unrestrictedGetObject().discussion_brief">
                 <p  tal:define="url content/getURL; fname python: content._unrestrictedGetObject().discussion_brief.filename">
-                    <a tal:attributes="href string: ${url}/view/++widget++form.widgets.discussion_brief/@@download/${fname}" tal:content="fname"></a>
+                    <a tal:attributes="href string: ${url}/view/++widget++form.widgets.discussion_brief/@@download/${fname}" tal:content="content/Title"></a>
                 </p>
             </tal:if>
         </tal:entry>

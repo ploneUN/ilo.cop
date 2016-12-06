@@ -1,5 +1,11 @@
 Changelog
 =========
+1.1v8 - nov 21
+-changed workflow added upcoming and changed discussion brief to title
+
+1.1v7 - nov 21
+-added portleets for brief
+
 1.1v6 - nov 18
 -removed public state added file field brief on discussion item
 
