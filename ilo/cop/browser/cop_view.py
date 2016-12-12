@@ -16,15 +16,14 @@ class Index(dexterity.DisplayForm):
     	return getToolByName(self.context, 'portal_catalog')
 
     def contents(self):
-    	context = self.context
-    	catalog = self.catalog
-    	path = '/'.join(context.getPhysicalPath())
-    	results = []
-    	brains = catalog.searchResults(path={'query': path, 'depth':1},
-    					portal_type='ilo.cop.copitem',
-    					sort_on='id', 
-    					sort_order='reverse' )
-    	return brains
+        context = self.context
+        catalog = self.catalog
+        path = '/'.join(context.getPhysicalPath())
+        results = []
+        brains = catalog.searchResults(path={'query': path, 'depth':1},portal_type='ilo.cop.copitem',sort_on='created', sort_order='reverse')[:5]
+        
+        return brains
+        
 
     def searchedValue(self, name=None):
         result = 0
@@ -32,4 +31,29 @@ class Index(dexterity.DisplayForm):
             form = self.request.form
             result = form[name]
         return result
+    
+    def highlight_news(self):
+        context = self.context
+        catalog = self.catalog
+        path = '/'.join(context.getPhysicalPath())
+        brains = catalog.unrestrictedSearchResults(path={'query':path, 'depth':5}, portal_type='News Item', Subject=('highlight',), sort_order='reverse', sort_on='created', review_state='shared_intranet')
+        if brains:
+            return brains[0]
+        return []
+    
+    def news(self):
+        context = self.context
+        catalog = self.catalog
+        path = '/'.join(context.getPhysicalPath())
+        results = []
+        brains = catalog.unrestrictedSearchResults(path={'query':path, 'depth':5}, portal_type='News Item', sort_order='reverse', sort_on='created', review_state='shared_intranet')
+        for brain in brains or []:
+            if 'highlight' not in brain.Subject:
+                if len(results) < 3:
+                    results.append({'title':brain.Title, 'desc':brain.Description, 'img':brain.getObject().getImage(), 'url':brain.getPath()})
+                else:
+                    break
+                        
+        return results         
+                
     

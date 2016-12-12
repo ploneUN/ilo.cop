@@ -38,8 +38,44 @@
 
 <metal:main fill-slot="content-core">
   <metal:content-core define-macro="content-core">
-
-    <tal:block repeat="widget view/widgets/values">
+    
+    <!-- HIGHLIGHT NEWS -->
+    <tal:block tal:define="highlight view/highlight_news" tal:condition="highlight">
+        <div tal:condition="python: highlight.getObject().getImage()">
+            <img tal:attributes="src python: highlight.getPath()+'/@@images/image/preview'" />
+        </div>
+        <h3 tal:content="highlight/Title"></h3>
+        <p tal:content="highlight/Description"/>
+    </tal:block>
+    
+    <!-- NEWS -->
+    <h1>News</h1>
+    <tal:block tal:define="brains view/news" tal:condition="brains">
+        <tal:entry tal:repeat="data brains">
+            <div tal:condition="python: data['img']">
+                <img tal:attributes="src python: data['url']+'/@@images/image/thumb'" />
+            </div>
+            <h3 tal:content="python: data['title']"></h3>
+            <a tal:attributes="href python: data['url']">
+                <p tal:content="python: data['desc']"/>
+            </a>
+        </tal:entry>
+        
+    </tal:block>
+    
+    <!-- DISCUSSIONS -->
+    <h1>Discussion</h1>
+    <tal:block tal:define="discussion view/contents" tal:condition="discussion">
+        <tal:entry tal:repeat="data discussion">
+            <img src='#' alt='Image here'/>
+            <h3 tal:content="data/Title"/>
+            <a tal:attributes="href data/getURL">
+                <p tal:content="data/Description"/>
+            </a>
+        </tal:entry>
+    </tal:block>
+    
+    <!--<tal:block repeat="widget view/widgets/values">
         <div class="field" tal:condition="python:widget.__name__ not in ('IDublinCore.title', 'IDublinCore.description', 'title', 'description',)">
             <label tal:content="widget/label" />
             <br />
@@ -84,7 +120,7 @@
             <br />
             <div tal:content="structure widget/render" />
         </div>
-    </fieldset>
+    </fieldset>-->
   </metal:content-core>
 </metal:main>
 
