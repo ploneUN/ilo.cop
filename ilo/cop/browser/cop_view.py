@@ -20,7 +20,7 @@ class Index(dexterity.DisplayForm):
         catalog = self.catalog
         path = '/'.join(context.getPhysicalPath())
         results = []
-        brains = catalog.searchResults(path={'query': path, 'depth':1},portal_type='ilo.cop.copitem',sort_on='created', sort_order='reverse')[:5]
+        brains = catalog.searchResults(path={'query': path, 'depth':1},portal_type='ilo.cop.copitem',sort_on='created', sort_order='reverse', review_state='open')[:5]
         
         return brains
         
