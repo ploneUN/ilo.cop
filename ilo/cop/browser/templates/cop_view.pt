@@ -53,9 +53,9 @@
     </tal:block>
 	
 	
-	<!--PUBLICATIONS-->
-	<!--<div class="row">-->
-	<!--	-->
+	
+	<div class="row">
+			<!--PUBLICATIONS-->
 	<!--	<div class="cell width-1:4 position-1:2">-->
 	<!--		<h2 style="margin-bottom:10px">Publications</h2>-->
 	<!--		<tal:block tal:define="brains view/news" tal:condition="brains">-->
