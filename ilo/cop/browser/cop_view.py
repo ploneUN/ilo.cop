@@ -54,6 +54,21 @@ class Index(dexterity.DisplayForm):
                 else:
                     break
                         
-        return results         
+        return results
+    
+    def publications(self):
+        context = self.context
+        catalog = self.catalog
+        path = '/'.join(context.getPhysicalPath())
+        brains = catalog.unrestrictedSearchResults(path={'query':path, 'depth':5}, portal_type='File', sort_order='reverse', sort_on='created', review_state='shared_intranet')
+        results = []
+        for brain in brains:
+            if 'publication' in brain.Subject:
+                if len(results) < 3:
+                    results.append(brain)
+                else:
+                    break
+        return results
+                
                 
     
