@@ -46,7 +46,9 @@
             <img style="width:100%" tal:attributes="src python: highlight.getPath()+'/@@images/image/preview'" />
           </div>
           <div class ="cell position-6 width-10">
-            <h2 tal:content="highlight/Title"></h2>
+			<a tal:attributes="href highlight/getURL">
+				<h2 tal:content="highlight/Title"></h2>
+			</a>
             <p tal:content="highlight/Description"/>
           </div>
         </div>
