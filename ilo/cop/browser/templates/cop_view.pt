@@ -102,10 +102,10 @@
 							</div>
 						</div>
 						<div class ="cell position-4 width-12">
-							<h3 tal:content="python: data['title']"></h3>
-							<a tal:attributes="href python: data['url']">
-								<p tal:content="python: data['desc']"/>
-							</a>
+              <a tal:attributes="href python: data['url']">
+                <h3 tal:content="python: data['title']"></h3>
+              </a>
+              <p tal:content="python: data['desc']"/>
 						</div>
 					</div>
 				</tal:entry>
