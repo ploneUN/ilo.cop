@@ -37,6 +37,7 @@ setup(name='ilo.cop',
 #          'collective.disqus',
           'ilo.qa',
           'plone.formwidget.multifile',
+          'collective.contentleadimage',
           # -*- Extra requirements: -*-
       ],
       extras_require={
