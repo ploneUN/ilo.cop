@@ -85,6 +85,7 @@
 							<a tal:attributes="href data/getURL">
 								<p tal:content="data/Title"/>
 							</a>
+              <p tal:content="python: data['desc']"/>
 						</li>
 					</ul>
                 </tal:entry>
